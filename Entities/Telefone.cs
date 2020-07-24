@@ -25,12 +25,16 @@ namespace Atividade_III_Ex6.Entities
             Telefones.Remove(telefone);
         }
 
-        /*public List<string> printTelefone(){
+        public string printTelefone(){
             StringBuilder texto = new StringBuilder();
             foreach(string tel in Telefones){
-                texto.AppendLine(tel + ", ");
+                texto.Append(tel);
             }
             return texto.ToString();
+        }
+
+        /*public void printTelefones(){
+            System.Console.WriteLine(Telefones);
         }*/
 
     }

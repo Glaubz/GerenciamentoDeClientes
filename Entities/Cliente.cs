@@ -30,7 +30,7 @@ namespace Atividade_III_Ex6.Entities
         }
 
         public override string ToString(){
-            return Id + " - " + Nome + " | " + Email + " | " + Endereco + " | ";
+            return Id + " - " + Nome + " | " + Email + " | " + Endereco + " | " + Telefone.printTelefone();
         }
         
     }

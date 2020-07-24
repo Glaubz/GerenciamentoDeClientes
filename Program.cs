@@ -43,7 +43,6 @@ namespace Atividade_III_Ex6
                     Cliente cliente = new Cliente(id, nome, email, endereco, telefone);
 
                     clientes.addCliente(cliente);
-                    System.Console.WriteLine(cliente);
 
                     string linha2; //Variável para verificar linhas do segundo arquivo
                     while((linha2 = gastoMensal.ReadLine()) != null){ //Verifica cada linha do arquivo
@@ -55,6 +54,9 @@ namespace Atividade_III_Ex6
                         }
                     }
                     cliente.gastoAnual(); //Executado método para cálculo do gasto anual de um cliente
+
+                    Console.WriteLine(cliente);
+                    Console.WriteLine("Gasto anual: " + cliente.GastoAnual.ToString("F2", CultureInfo.InvariantCulture) + "\n");
 
                     //Verificado na documentação oficial que as seguintes linhas reiniciam a leitura do StreamReader
                     gastoMensal.DiscardBufferedData(); //Limpa o buffer
@@ -68,7 +70,7 @@ namespace Atividade_III_Ex6
                 dadosClientes.Close();
                 gastoMensal.Close();
 
-                Console.Write("\nGasto total dos clientes: R$" + clientes.GastoTotal.ToString("F2", CultureInfo.InvariantCulture));
+                Console.Write("GASTO TOTAL DOS CLIENTES: R$" + clientes.GastoTotal.ToString("F2", CultureInfo.InvariantCulture) + "\n");
 
             }
             catch(Exception m){
