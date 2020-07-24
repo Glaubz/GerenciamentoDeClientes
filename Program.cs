@@ -49,19 +49,26 @@ namespace Atividade_III_Ex6
                     while((linha2 = gastoMensal.ReadLine()) != null){ //Verifica cada linha do arquivo
                         string[] valores = linha2.Split(";");
                         if(valores[0] == id.ToString()){ //Verifica se o numero de Id do segundo arquivo bate com o Id do cliente no primeiro arquivo
-                            for(int i=0; i<cliente.GastoMensal.Length; i++){
+                            for(int i=0; i<cliente.GastoMensal.Length; i++){ //Enquanto i for menor que o tamanho do vetor de GastoMensal será definido para cada posição do GastoMensal um valor de valores
                                 cliente.GastoMensal[i] = double.Parse(valores[i+1], CultureInfo.InvariantCulture);
                             }
                         }
                     }
-                    gastoMensal.DiscardBufferedData();
-                    gastoMensal.BaseStream.Seek(0, SeekOrigin.Begin);
+                    cliente.gastoAnual(); //Executado método para cálculo do gasto anual de um cliente
+
+                    //Verificado na documentação oficial que as seguintes linhas reiniciam a leitura do StreamReader
+                    gastoMensal.DiscardBufferedData(); //Limpa o buffer
+                    gastoMensal.BaseStream.Seek(0, SeekOrigin.Begin); //Define de onde iniciar e como será o restante da leitura
 
                 }
+                clientes.totalGastos(); //Executado método para deferir o total de gastos de todos os clientes
 
-                System.Console.WriteLine("Teste");
+                //System.Console.WriteLine("Teste");
 
                 dadosClientes.Close();
+                gastoMensal.Close();
+
+                Console.Write("\nGasto total dos clientes: R$" + clientes.GastoTotal.ToString("F2", CultureInfo.InvariantCulture));
 
             }
             catch(Exception m){
