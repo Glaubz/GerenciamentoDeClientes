@@ -7,6 +7,7 @@ namespace Atividade_III_Ex6.Entities
         public string Email { get; set; }
         public Endereco Endereco { get; set; }
         public Telefone Telefone { get; set; }
+        public double[] GastoMensal { get; set; } = new double[12];
 
         public Cliente()
         {
