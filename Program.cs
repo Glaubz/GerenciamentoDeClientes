@@ -20,7 +20,7 @@ namespace Atividade_III_Ex6
                 //Objeto do tipo StreamReader para manipulação de leitura de arquivos
                 StreamReader dadosClientes = new StreamReader(origem);
                 //StreamReader de Gastos Mensais
-                StreamReader gastosMensal = new StreamReader(caminhoGastosMensal);
+                StreamReader gastoMensal = new StreamReader(caminhoGastosMensal);
                 
                 string linha; //Variável para guardar cada linha
 
@@ -45,8 +45,8 @@ namespace Atividade_III_Ex6
                     clientes.addCliente(cliente);
                     System.Console.WriteLine(cliente);
 
-                    string linha2 = null; //Variável para verificar linhas do segundo arquivo
-                    while((linha2 = gastosMensal.ReadLine()) != null){ //Verifica cada linha do arquivo
+                    string linha2; //Variável para verificar linhas do segundo arquivo
+                    while((linha2 = gastoMensal.ReadLine()) != null){ //Verifica cada linha do arquivo
                         string[] valores = linha2.Split(";");
                         if(valores[0] == id.ToString()){ //Verifica se o numero de Id do segundo arquivo bate com o Id do cliente no primeiro arquivo
                             for(int i=0; i<cliente.GastoMensal.Length; i++){
@@ -54,6 +54,8 @@ namespace Atividade_III_Ex6
                             }
                         }
                     }
+                    gastoMensal.DiscardBufferedData();
+                    gastoMensal.BaseStream.Seek(0, SeekOrigin.Begin);
 
                 }
 
