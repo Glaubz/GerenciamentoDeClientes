@@ -13,9 +13,9 @@ namespace Atividade_III_Ex6
                 Clientes clientes = new Clientes();
 
                 //Variável que contém o caminho do arquivo
-                string origem = @"/home/glauber/Documentos/Projetos_C#/Exs_OO/Atividade_III/BD_Ex6-Atividade3/BD_DadosClientes.txt";
+                string origem = "BD_DadosClientes.txt";
                 //Caminho do arquivo com Gastos de cada cliente no mês
-                string caminhoGastosMensal = @"/home/glauber/Documentos/Projetos_C#/Exs_OO/Atividade_III/BD_Ex6-Atividade3/BD_GastosClientes.txt";
+                string caminhoGastosMensal = "BD_GastosClientes.txt";
 
                 //Objeto do tipo StreamReader para manipulação de leitura de arquivos
                 StreamReader dadosClientes = new StreamReader(origem);

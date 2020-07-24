@@ -1,0 +1,3 @@
+1|Matheus|matheus@gmail|(12)988001122|Rua das Indústrias|33|Jacareí
+2|José|Jose24@hotmail|(12)39552469|Sto Antonio|24|Jacareí
+3|Brian|brian_zika@orkut|(11)33520069|Tietê|69|São Paulo
